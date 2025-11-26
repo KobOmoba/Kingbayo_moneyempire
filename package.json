@@ -12,7 +12,8 @@
     "typescript",
     "pwa",
     "sports-betting",
-    "gemini-ai"
+    "gemini-ai",
+    "kingbayomoneyempire"
   ],
   "author": "AariNAT Company Limited",
   "license": "MIT",
@@ -31,7 +32,8 @@
     "preview:production": "vite preview --host --mode production",
     "type-check": "tsc --noEmit",
     "lint": "eslint src --ext .ts,.tsx --report-unused-disable-directives --max-warnings 0",
-    "lint:fix": "eslint src --ext .ts,.tsx --fix"
+    "lint:fix": "eslint src --ext .ts,.tsx --fix",
+    "deploy": "npm run build && npx vercel --prod"
   },
   "dependencies": {
     "@google/generative-ai": "^0.21.0",
@@ -68,13 +70,17 @@
   "browserslist": {
     "production": [
       ">0.2%",
-      "not dead",
-      "not op_mini all"
+      "last 4 versions",
+      "Firefox ESR",
+      "not ie < 9"
     ],
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "volta": {
+    "node": "18.17.0"
   }
 }
