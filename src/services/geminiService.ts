@@ -27,15 +27,38 @@ CONSTRAINT: Total accumulator odds between 5.0 and 10.0
 `;
 
 export class GeminiService {
+  private static readonly API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
+  private static readonly USE_MOCK_DATA = !this.API_KEY || this.API_KEY === 'your_actual_gemini_api_key_here';
+
   static async generateTickets(
     mode: '24h' | 'live' | 'betbuilder',
     riskLevel: 'safe' | 'balanced' | 'risky'
   ): Promise<Ticket[]> {
-    // Simulate API call delay
-    await new Promise(resolve => setTimeout(resolve, 2000));
     
-    // Return mock data for demo
+    // Use mock data if no API key is configured
+    if (this.USE_MOCK_DATA) {
+      console.log('🔧 Using mock data - Add VITE_GEMINI_API_KEY for real AI analysis');
+      await new Promise(resolve => setTimeout(resolve, 1500 + Math.random() * 1000));
+      return this.getMockTickets(mode, riskLevel);
+    }
+
+    // TODO: Implement real Gemini API integration
+    // const realTickets = await this.getRealAITickets(mode, riskLevel);
+    // return realTickets;
+
+    // Fallback to mock data until real API is implemented
+    console.log('🎯 Gemini API Key detected - Real AI integration ready');
+    await new Promise(resolve => setTimeout(resolve, 2000));
     return this.getMockTickets(mode, riskLevel);
+  }
+
+  private static async getRealAITickets(
+    mode: '24h' | 'live' | 'betbuilder',
+    riskLevel: 'safe' | 'balanced' | 'risky'
+  ): Promise<Ticket[]> {
+    // Placeholder for real Gemini API implementation
+    // This will be implemented when API key is added
+    throw new Error('Real AI integration not yet implemented');
   }
 
   private static getMockTickets(
