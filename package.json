@@ -1,5 +1,5 @@
 {
-  "name": "kingbayomoneyempire",
+  "name": "kingbayomoneyempire-pro",
   "version": "1.0.0",
   "type": "module",
   "private": true,
@@ -21,7 +21,7 @@
     "type": "git",
     "url": "https://github.com/KobOmoba/Kingbayo_moneyempire.git"
   },
-  "homepage": "https://kingbayomoneyempire.vercel.app",
+  "homepage": "https://kingbayomoneyempire-pro.vercel.app",
   "bugs": {
     "url": "https://github.com/KobOmoba/Kingbayo_moneyempire/issues"
   },
