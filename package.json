@@ -27,7 +27,7 @@
   },
   "scripts": {
     "dev": "vite --host --port 5000",
-    "build": "tsc --noEmit && vite build",
+    "build": "vite build",
     "preview": "vite preview --host --port 5001",
     "type-check": "tsc --noEmit"
   },
