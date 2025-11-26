@@ -1,146 +1,84 @@
 <!DOCTYPE html>
-<html lang="en" class="h-full">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>KingBayo Money Empire - AI Sports Analytics</title>
-    
-    <!-- PWA Meta Tags -->
-    <meta name="theme-color" content="#0f172a" />
     <meta name="description" content="AI-powered sports analytics platform for high-probability accumulator slips. Cold-blooded analytical predator hunting across global markets." />
-    <meta name="keywords" content="sports analytics, AI predictions, accumulator bets, football, basketball, tennis, cricket, sports betting" />
+    <meta name="theme-color" content="#0f172a" />
     <meta name="author" content="AariNAT Company Limited" />
-    <meta name="robots" content="index, follow" />
     
-    <!-- PWA Manifest -->
-    <link rel="manifest" href="/manifest.json" />
-    
-    <!-- Icons -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👑</text></svg>" />
-    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👑</text></svg>" />
-    
-    <!-- PWA Capabilities -->
-    <meta name="mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-    <meta name="apple-mobile-web-app-title" content="KingBayo Money Empire" />
-    
-    <!-- Open Graph / Social Media -->
-    <meta property="og:title" content="KingBayo Money Empire - AI Sports Analytics" />
-    <meta property="og:description" content="AI-powered sports analytics platform for high-probability accumulator slips" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://kingbayomoneyempire.com" />
-    
-    <!-- Tailwind CSS with Performance Optimizations -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        darkMode: 'class',
-        theme: {
-          extend: {
-            colors: {
-              slate: {
-                900: '#0f172a',
-                800: '#1e293b',
-                700: '#334155',
-                600: '#475569',
-              }
-            },
-            animation: {
-              'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-              'bounce-slow': 'bounce 2s infinite',
-            },
-            fontFamily: {
-              'inter': ['Inter', 'system-ui', 'sans-serif'],
-            }
-          }
-        },
-        corePlugins: {
-          preflight: true,
-        }
-      }
-    </script>
-    
-    <!-- Preload Critical Resources -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Critical CSS for initial load -->
+    <!-- Simple loading style -->
     <style>
-      /* Prevent layout shift during React hydration */
+      /* Simple loading state */
       #root {
         min-height: 100vh;
         background-color: #0f172a;
+        color: white;
       }
       
-      /* Smooth scrolling */
-      html {
-        scroll-behavior: smooth;
+      .loading-fallback {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        text-align: center;
+        background: #0f172a;
+        color: white;
+        font-family: system-ui, -apple-system, sans-serif;
       }
       
-      /* Font smoothing for better readability */
-      body {
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        text-rendering: optimizeLegibility;
-        font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      .loading-content h1 {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+        color: #e2e8f0;
       }
       
-      /* Loading state styles */
-      .loading-skeleton {
-        background: linear-gradient(90deg, #1e293b 25%, #334155 50%, #1e293b 75%);
-        background-size: 200% 100%;
-        animation: loading 1.5s infinite;
+      .loading-content p {
+        color: #94a3b8;
+        margin-bottom: 1rem;
+      }
+      
+      .loading-bar {
+        width: 120px;
+        height: 4px;
+        background: #334155;
+        border-radius: 2px;
+        margin: 0 auto;
+        overflow: hidden;
+      }
+      
+      .loading-progress {
+        height: 100%;
+        width: 50%;
+        background: #10b981;
+        animation: loading 1.5s ease-in-out infinite;
       }
       
       @keyframes loading {
-        0% { background-position: 200% 0; }
-        100% { background-position: -200% 0; }
+        0%, 100% { transform: translateX(-100%); }
+        50% { transform: translateX(100%); }
       }
     </style>
-</head>
-<body class="h-full bg-slate-900 text-white font-inter">
-    <div id="root" class="h-full">
-        <!-- Loading fallback for slow connections -->
-        <div class="flex items-center justify-center h-full">
-            <div class="text-center">
-                <div class="text-4xl mb-4">👑</div>
-                <h1 class="text-2xl font-bold text-slate-300 mb-2">KingBayo Money Empire</h1>
-                <p class="text-slate-500">Loading cold-blooded analytical predator...</p>
-                <div class="mt-4 w-32 h-2 bg-slate-700 rounded-full mx-auto overflow-hidden">
-                    <div class="loading-skeleton h-full w-1/2"></div>
-                </div>
-            </div>
+  </head>
+  <body>
+    <div id="root">
+      <!-- Simple loading fallback -->
+      <div class="loading-fallback">
+        <div class="loading-content">
+          <div style="font-size: 2rem; margin-bottom: 1rem;">👑</div>
+          <h1>KingBayo Money Empire</h1>
+          <p>Loading analytical engine...</p>
+          <div class="loading-bar">
+            <div class="loading-progress"></div>
+          </div>
         </div>
+      </div>
     </div>
     
-    <!-- App Scripts -->
+    <!-- React App -->
     <script type="module" src="/src/main.tsx"></script>
-    
-    <!-- Lucide Icons for enhanced UI -->
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-    <script>
-      // Initialize Lucide icons
-      lucide.createIcons();
-      
-      // Service Worker Registration for PWA
-      if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
-          navigator.serviceWorker.register('/sw.js').then((registration) => {
-            console.log('SW registered: ', registration);
-          }).catch((registrationError) => {
-            console.log('SW registration failed: ', registrationError);
-          });
-        });
-      }
-      
-      // Dark mode detection
-      if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-        document.documentElement.classList.add('dark');
-      } else {
-        document.documentElement.classList.remove('dark');
-      }
-    </script>
-</body>
+  </body>
 </html>
