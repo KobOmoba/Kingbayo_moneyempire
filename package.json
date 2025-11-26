@@ -1,5 +1,5 @@
 {
-  "name": "kingbayomoneyempire-pro",
+  "name": "kingbayomoneyempire_pro",
   "version": "1.0.0",
   "type": "module",
   "private": true,
@@ -20,7 +20,7 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/KobOmoba/Kingbayo_moneyempire.git"
-  },
+  ],
   "homepage": "https://kingbayomoneyempire-pro.vercel.app",
   "bugs": {
     "url": "https://github.com/KobOmoba/Kingbayo_moneyempire/issues"
@@ -40,7 +40,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "tailwindcss": "^3.4.18",
-    "vite-plugin-pwa": "^1.1.0"
+    "vite-plugin-pwa": "^0.17.4"
   },
   "devDependencies": {
     "@types/react": "^18.2.0",
