@@ -26,14 +26,18 @@
     "url": "https://github.com/KobOmoba/Kingbayo_moneyempire/issues"
   },
   "scripts": {
-    "dev": "vite --host",
-    "build": "tsc && vite build",
-    "preview": "vite preview --host",
-    "preview:production": "vite preview --host --mode production",
+    "dev": "vite --host --port 5000",
+    "build": "tsc --noEmit && vite build",
+    "build:analyze": "tsc --noEmit && vite build --mode analysis",
+    "preview": "vite preview --host --port 5001",
+    "preview:production": "vite preview --host --port 5001 --mode production",
     "type-check": "tsc --noEmit",
     "lint": "eslint src --ext .ts,.tsx --report-unused-disable-directives --max-warnings 0",
     "lint:fix": "eslint src --ext .ts,.tsx --fix",
-    "deploy": "npm run build && npx vercel --prod"
+    "deploy": "npm run build && npx vercel --prod",
+    "deploy:preview": "npm run build && npx vercel",
+    "clean": "rm -rf dist node_modules/.vite",
+    "build:stats": "npm run build -- --mode stats"
   },
   "dependencies": {
     "@google/generative-ai": "^0.21.0",
