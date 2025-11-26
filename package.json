@@ -3,19 +3,39 @@
   "version": "1.0.0",
   "type": "module",
   "private": true,
-  "description": "AI-powered sports analytics platform",
+  "description": "AI-powered sports analytics platform for high-probability accumulator slips - Cold-blooded analytical predator hunting across global markets",
+  "keywords": [
+    "sports-analytics",
+    "ai-predictions",
+    "accumulator-bets",
+    "react",
+    "typescript",
+    "pwa",
+    "sports-betting",
+    "gemini-ai"
+  ],
   "author": "AariNAT Company Limited",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/KobOmoba/Kingbayo_moneyempire.git"
+  },
+  "homepage": "https://kingbayoempire.vercel.app",
+  "bugs": {
+    "url": "https://github.com/KobOmoba/Kingbayo_moneyempire/issues"
+  },
   "scripts": {
     "dev": "vite --host --port 5000",
     "build": "vite build",
-    "preview": "vite preview --host --port 5001"
+    "preview": "vite preview --host --port 5001",
+    "type-check": "tsc --noEmit"
   },
   "dependencies": {
     "@google/generative-ai": "^0.21.0",
     "lucide-react": "^0.263.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "recharts": "^2.8.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.0",
@@ -25,7 +45,8 @@
     "postcss": "^8.5.6",
     "tailwindcss": "^3.4.18",
     "typescript": "^5.0.0",
-    "vite": "^4.4.0"
+    "vite": "^4.4.0",
+    "vite-plugin-pwa": "^0.17.4"
   },
   "engines": {
     "node": ">=18.0.0"
